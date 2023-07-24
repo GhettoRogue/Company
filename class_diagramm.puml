@@ -1,0 +1,110 @@
+@startuml
+
+TransportMode <--o Transport
+enum TransportMode {
+PASSENGER, CARGO
+}
+
+TransportMode <-- Auto
+Transport <|-- Auto
+class Auto{
+
++ Auto(model : string)
+
++ GetModel() : string
+
++ SetModel() : string
+}
+
+TransportMode <-- Railway
+Transport <|-- Railway
+class Railway{
+
++ Railway(model : string)
+
++ GetModel() : string
+
++ SetModel() : string
+}
+
+TransportMode <-- Airplane
+Transport <|-- Airplane
+class Airplane{
+
++ Airplane(model : string)
+
++ GetModel() : string
+
++ SetModel() : string
+}
+
+Transport <--* Cargo
+Transport <--* Passenger
+class Transport{
+- model : string
+- max_weight : double
+- type : string
+- TransportMode : ENUM
+- Cargo[];
+- Passenger[];
+
++ Transport(model: string,max_weight : double, type : string, TransportMode : ENUM)
+
++ GetMaxWeight() : double
++ GetType() : string
+
++ SetMaxWeight() : string
++ SetType() : string
+}
+
+class Order{
+- distance : double
+- price : double
+
++ Order(distance : double, price : double)
+
++ GetDistance() : double
++ GetPrice() : double
+
++ SetDistance() : double
++ SetPrice() : double
+}
+
+class Cargo {
+- name : string
+- weight : double
+
++ Cargo(name : string, weight : double )
+
++ GetName() : string
++ GetWeight() : double
+
++SetName() : string
++SetWeight() : string
+}
+
+class Passenger {
+- name : string
+- amount_passengers : int
+
++ Passenger(name : string, amount_passengers : int)
+
++ GetName() : string
++ GetAmountPassengers() : int
+
++SetName() : string
++SetAmountPassengers() : int
+}
+
+Transport <--* Company
+Order <--* Company
+class Company {
+- Transport[];
+- Order[];
+
++ AddTransport(transport : Transport) : void
++ CreateOrder(order : Order) : void
++ AddCargo(cargo : Cargo) : void
+}
+
+@enduml
