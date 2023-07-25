@@ -48,7 +48,7 @@ class Transport{
 - Cargo[];
 - Passenger[];
 
-+ Transport(model: string,max_weight : double, type : string, TransportMode : ENUM)
++ Transport(model: string,max_weight : double, type : string, TransportMode : ENUM, Cargo: (cargo : Cargo))
 
 + GetMaxWeight() : double
 + GetType() : string
@@ -104,7 +104,6 @@ class Company {
 
 + AddTransport(transport : Transport) : void
 + CreateOrder(order : Order) : void
-+ AddCargo(cargo : Cargo) : void
 }
 
 @enduml

@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "TransportMode.h"
+#include "Cargo.h"
 
 using namespace std;
 
@@ -14,11 +15,10 @@ private:
     double _max_weight;
     string _type;
     TransportMode _mode;
+    Cargo _cargo;
 public:
-    Transport(const string &model, double maxWeight, const string &type, TransportMode mode) : _model(model),
-                                                                                               _max_weight(maxWeight),
-                                                                                               _type(type),
-                                                                                               _mode(mode) {}
+    Transport(const string &model, double maxWeight, const string &type, TransportMode mode, const Cargo &cargo)
+            : _model(model), _max_weight(maxWeight), _type(type), _mode(mode), _cargo(cargo) {}
 
     double GetMaxWeight() const {
         return _max_weight;

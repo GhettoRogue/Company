@@ -7,8 +7,8 @@
 using namespace std;
 
 class Cargo {
-string _name;
-double _weight;
+    string _name;
+    double _weight;
 public:
     Cargo(const string &name, double weight) : _name(name), _weight(weight) {}
 
