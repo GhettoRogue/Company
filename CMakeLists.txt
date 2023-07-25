@@ -3,4 +3,4 @@ project(Company)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Company main.cpp lib/Transport.h)
+add_executable(Company main.cpp lib/Transport.h lib/TransportMode.h)
