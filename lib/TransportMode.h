@@ -2,7 +2,7 @@
 #define COMPANY_TRANSPORTMODE_H
 
 enum TransportMode {
-    PASSENGER,CARGO
+    PASSENGER, CARGO
 };
 
 #endif
